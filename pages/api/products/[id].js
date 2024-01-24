@@ -1,5 +1,5 @@
-import dbConnect from "@/utils/dbConnect";
-import Product from "@/models/Product";
+import dbConnect from "@/pages/api/utils/dbConnect";
+import Product from "@/pages/api/models/Product";
 
 
 export default async function handler(req, res) {
