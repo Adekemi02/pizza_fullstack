@@ -1,7 +1,7 @@
 const mongoose = require("mongoose")
 
 
-const MONGO_URL = process.env.MONGODB_URL
+const MONGO_URL = process.env.MONGODB_URI
 
 if (!MONGO_URL) {
     throw new Error(
