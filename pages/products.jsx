@@ -2,6 +2,7 @@ import PizzaCard from '@/components/PizzaCard';
 import Image from 'next/image';
 import React from 'react';
 import axios from 'axios';
+import { BASE_URL } from './api/utils/connectUrl';
 
 
 
@@ -48,7 +49,7 @@ const Products = ({pizzaList}) => {
 
 
 export const getServerSideProps = async () => {
-    const res = await axios.get("http://localhost:3000/api/products");
+    const res = await axios.get(`${BASE_URL}/api/products`);
     
     return {
         props: {

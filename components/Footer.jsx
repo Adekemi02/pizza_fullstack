@@ -1,10 +1,13 @@
-import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF'
-import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram'
-import { faPinterestP } from '@fortawesome/free-brands-svg-icons/faPinterestP'
-import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
-import React from 'react'
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons/faFacebookF';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons/faInstagram';
+import { faPinterestP } from '@fortawesome/free-brands-svg-icons/faPinterestP';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Link from 'next/link';
+import React from 'react';
+
+
+
 
 const Footer = () => {
   return (
