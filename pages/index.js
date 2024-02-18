@@ -8,6 +8,7 @@ import axios from 'axios';
 import { BASE_API_URL } from './utils/connectUrl';
 
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home({product}) {
