@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { reset } from "@/redux/cartSlice";
 import axios from "axios";
 import OrderDetail from '@/components/OrderDetail';
-import { BASE_API_URL } from '../utils/connectUrl';
+import { BASE_API_URL } from './utils/connectUrl';
 
 
 

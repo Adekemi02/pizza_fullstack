@@ -1,6 +1,6 @@
-import dbConnect from "@/utils/dbConnect"
+import dbConnect from "@/pages/utils/dbConnect"
 import Product from "@/models/Product";
-import initMiddleware from "@/utils/initMiddleware";
+import initMiddleware from "@/pages/utils/initMiddleware";
 import Cors  from "cors";
 
 

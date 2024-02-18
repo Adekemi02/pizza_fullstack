@@ -1,4 +1,4 @@
-import dbConnect from "@/utils/dbConnect";
+import dbConnect from "@/pages/utils/dbConnect";
 import Order from "@/models/Order";
 
 

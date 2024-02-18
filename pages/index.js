@@ -5,7 +5,7 @@ import Offers from '@/components/Offer';
 import Strength from '@/components/Strength';
 import Feedback from '@/components/Feedback';
 import axios from 'axios';
-import { BASE_API_URL } from '@/utils/connectUrl';
+import { BASE_API_URL } from '@/pages/utils/connectUrl';
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -47,7 +47,7 @@ export const getServerSideProps = async () => {
       };
       
     }
-    // const res = await fetch(`${BASE_API_URL}/api/products`);
+    // const res = await fetch(`${BASE_API_URL}server//api/products`);
     // const result = await resData.json()
     const  result1 = res.data.data;
 

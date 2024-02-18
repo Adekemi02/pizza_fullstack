@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styles from "@/styles/Admin.module.css";
 import axios from "axios";
 import Image from "next/image";
-import { BASE_URL } from "../../utils/connectUrl";
+import { BASE_URL } from "@/pages/utils/connectUrl";
 
 
 
