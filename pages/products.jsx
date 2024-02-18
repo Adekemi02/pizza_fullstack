@@ -2,7 +2,7 @@ import PizzaCard from '@/components/PizzaCard';
 import Image from 'next/image';
 import React from 'react';
 import axios from 'axios';
-import { BASE_API_URL } from '@/pages/utils/connectUrl';
+import { BASE_API_URL } from './utils/connectUrl';
 
 
 
