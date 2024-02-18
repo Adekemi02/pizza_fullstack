@@ -22,14 +22,14 @@ const login = () => {
           <input
             placeholder="username"
             className={styles.input}
-            // onChange={(e) => setUsername(e.target.value)}
+            
           />
 
           <input
             placeholder="password"
             type="password"
             className={styles.input}
-            // onChange={(e) => setPassword(e.target.value)}
+            
           />
 
           <button  className={styles.button}>
