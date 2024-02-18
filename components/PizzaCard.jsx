@@ -4,14 +4,16 @@ import Link from "next/link";
 
 
 const PizzaCard = ({pizza}) => {
-    return (
+    console.log('Pizza Card Data:', pizza);
 
+    return (
+    
         <div className=" flex flex-col justify-center gap-10 ">
                 {/* single item */}
             
             <div className="flex flex-col gap-4 h-[500px] border cursor-pointer">
             
-                <Link href={`/products/${pizza._id}`} passHref >
+                <Link href={`/products/${pizza._id}`} >
                     <div className="h-1/2 p-4">
                         <Image src={pizza.img} alt="" width={300} height={300} />
                     </div>               

@@ -1,5 +1,5 @@
-import dbConnect from "@/pages/api/utils/dbConnect";
-import Product from "@/pages/api/models/Product";
+import dbConnect from "@/utils/dbConnect";
+import Product from "@/models/Product";
 
 
 export default async function handler(req, res) {
@@ -8,7 +8,7 @@ export default async function handler(req, res) {
         query: {id} 
     } = req;
 
-    dbConnect()
+    await dbConnect()
 
     if(method === 'GET') {
         try {
@@ -41,7 +41,7 @@ export default async function handler(req, res) {
         try {
             await Product.findByIdAndDelete(id)
 
-            res.status(201).json({message: "Item deleted successfully!"})
+            res.status(200).json({message: "Item deleted successfully!"})
             
         } catch (err) {
             res.status(500).json(err)

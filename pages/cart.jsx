@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 import { reset } from "@/redux/cartSlice";
 import axios from "axios";
 import OrderDetail from '@/components/OrderDetail';
-import { BASE_URL } from './api/utils/connectUrl';
+import { BASE_API_URL } from '../utils/connectUrl';
 
 
 
@@ -23,7 +23,7 @@ const CartPage = () => {
 
     const createOrder = async (data) => {
         try {
-            const res = await axios.post(`${BASE_URL}/api/orders`, data);
+            const res = await axios.post("http://localhost:3000/api/orders", data);
             
             if (res.status === 201) {
                 dispatch(reset());

@@ -1,5 +1,5 @@
-import dbConnect from "@/pages/api/utils/dbConnect";
-import Order from "@/pages/api/models/Order";
+import dbConnect from "@/utils/dbConnect";
+import Order from "@/models/Order";
 
 
 

@@ -2,7 +2,7 @@ import PizzaCard from '@/components/PizzaCard';
 import Image from 'next/image';
 import React from 'react';
 import axios from 'axios';
-import { BASE_URL } from './api/utils/connectUrl';
+import { BASE_API_URL } from '../utils/connectUrl';
 
 
 
@@ -23,7 +23,7 @@ const Products = ({pizzaList}) => {
                         
                         <span className="px-2 mt-1 text-center"> Default Sorting </span>
                         <div className="mt-2 px-2">
-                        <Image src="/images/angle.png" alt="" width={15} height={15} />
+                            <Image src="/images/angle.png" alt="" width={15} height={15} />
                         </div>           
                     </div>
                 </div>
@@ -49,11 +49,17 @@ const Products = ({pizzaList}) => {
 
 
 export const getServerSideProps = async () => {
-    const res = await axios.get(`${BASE_URL}/api/products`);
+    const res = await axios.get("http://localhost:3000/api/products")
+    // const res = await fetch(`${BASE_API_URL}/api/products`);
+    
+    const result = res.data.data
+
+    console.log("API Response:", res);
+    console.log("Extracted Data:", result);
     
     return {
         props: {
-            pizzaList: res.data,        
+            pizzaList: Array.isArray(result) ? result : [],        
         },
     };
 };

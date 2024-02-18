@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import styles from "@/styles/Admin.module.css";
 import axios from "axios";
 import Image from "next/image";
-import { BASE_URL } from "../api/utils/connectUrl";
+import { BASE_URL } from "../../utils/connectUrl";
 
 
 
@@ -15,7 +15,7 @@ const AdminPage = ({orders, products}) => {
 
     const handleDelete = async (id) => {
         try {
-            const res = await axios.get(`${BASE_URL}/api/products/` + id)
+            const res = await axios.delete("http://localhost:3000/api/products/" + id)
             setPizzaList(pizzaList.filter((pizza) => pizza._id !== id))
 
         } catch (err) {
@@ -28,7 +28,7 @@ const AdminPage = ({orders, products}) => {
         const currentStatus = item.status;
 
         try {
-            const res = await axios.put(`${BASE_URL}/api/orders/` + id, {
+            const res = await axios.put("http://localhost:3000/api/orders/" + id, {
                 status: currentStatus + 1,
             });
 
@@ -143,13 +143,13 @@ export const getServerSideProps = async () => {
     //     };
     // }
 
-    const productRes = await axios.get(`${BASE_URL}/api/products`);
-    const orderRes = await axios.get(`${BASE_URL}/api/orders`);
+    const productRes = await axios.get("http://localhost:3000/api/products");
+    const orderRes = await axios.get("http://localhost:3000/api/orders");
 
     return {
         props: {
         orders: orderRes.data,
-        products: productRes.data,
+        products: productRes.data.data,
         },
     };
 };

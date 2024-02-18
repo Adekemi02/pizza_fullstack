@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProduct } from '@/redux/cartSlice';
-import { BASE_URL } from '../api/utils/connectUrl';
+import { BASE_API_URL } from '../../utils/connectUrl';
 
 
 
@@ -66,7 +66,7 @@ const Product = ({pizza}) => {
                 
                 <h1 className="font-semibold mb-4 mt-8"> Choose Pizza Size </h1>
 
-                <div className="w-[27%] flex justify-between items-center">
+                <div className="w-[35%] flex justify-between items-center">
                     <div className={styles.size} onClick={() => handleSize(0)}>
                         <Image src="/images/pizza_size.png" layout="fill" alt="" />
                         <span className={styles.number}>Small</span>
@@ -124,8 +124,7 @@ const Product = ({pizza}) => {
                         </span>
                     </div>
                 </div>
-
-                
+               
             </div>
         </div>
     )
@@ -134,7 +133,7 @@ const Product = ({pizza}) => {
 
 export const getServerSideProps = async ({params}) => {
 
-  const res = await axios.get(`${BASE_URL}/api/products/${params.id}`);
+  const res = await axios.get(`${BASE_API_URL}/api/products/${params.id}`);
   
   return {
     props: {

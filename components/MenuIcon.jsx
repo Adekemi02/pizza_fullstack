@@ -17,7 +17,7 @@ const Menu = () => {
     const [open, setOpen] = useState(false);
     const user = false
     return (
-        <div>
+        <>
             {!open ? (
                 <Image src = "/images/menu_icon.png" alt = "" width = {30} height = {30}
                 onClick = {() => setOpen(true)} />
@@ -42,7 +42,7 @@ const Menu = () => {
 
                 </div>
             )}
-        </div>
+        </>
     )
 }
 
