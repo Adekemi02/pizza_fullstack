@@ -45,6 +45,7 @@ export const getServerSideProps = async () => {
       return {
         notFound: true, 
       };
+      
     }
     // const res = await fetch(`${BASE_API_URL}/api/products`);
     // const result = await resData.json()
