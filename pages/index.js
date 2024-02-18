@@ -5,7 +5,7 @@ import Offers from '@/components/Offer';
 import Strength from '@/components/Strength';
 import Feedback from '@/components/Feedback';
 import axios from 'axios';
-import { BASE_API_URL } from './utils/connectUrl';
+import { BASE_API_URL } from '@/utils/connectUrl';
 
 
 

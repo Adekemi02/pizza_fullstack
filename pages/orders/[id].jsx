@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from '@/styles/Order.module.css';
 import axios from 'axios';
-import { BASE_URL } from '../utils/connectUrl';
+import { BASE_URL } from '../../utils/connectUrl';
 
 
 

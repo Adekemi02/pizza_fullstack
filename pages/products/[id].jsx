@@ -6,7 +6,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { addProduct } from '@/redux/cartSlice';
-import { BASE_API_URL } from '../utils/connectUrl';
+import { BASE_API_URL } from '../../utils/connectUrl';
 
 
 

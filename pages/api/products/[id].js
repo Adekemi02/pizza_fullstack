@@ -1,4 +1,4 @@
-import dbConnect from "@/pages/utils/dbConnect";
+import dbConnect from "@/utils/dbConnect";
 import Product from "@/models/Product";
 
 
