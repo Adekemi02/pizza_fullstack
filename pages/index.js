@@ -37,7 +37,7 @@ export default function Home({product}) {
 
 export const getServerSideProps = async () => {
   try {
-    const res = await axios.get("http://localhost:3000/api/products");
+    const res = await axios.get(`${BASE_API_URL}/api/products`);
 
     if (res.status !== 200) {
       console.error(`Failed to fetch data. Status code: ${res.status}`);
