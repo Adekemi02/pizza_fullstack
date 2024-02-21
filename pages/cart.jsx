@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
 import { PayPalScriptProvider, PayPalButtons, usePayPalScriptReducer } from "@paypal/react-paypal-js";
 import { useRouter } from "next/router";
-import { reset } from "@/redux/cartSlice";
+import { reset, removeFromCart } from "@/redux/cartSlice";
 import axios from "axios";
 import OrderDetail from '@/components/OrderDetail';
 import { BASE_API_URL } from '../utils/connectUrl';
@@ -33,6 +33,11 @@ const CartPage = () => {
         } catch (err) {
             console.log(err);
         }
+    };
+
+    const handleRemoveItem = (productId) => {
+        // Dispatch the removeFromCart action with the product ID
+        dispatch(removeFromCart(productId));
     };
 
     // Custom component to wrap the PayPalButtons and handle currency changes
@@ -127,7 +132,14 @@ const CartPage = () => {
                                 </td>
                                 <td className=" py-2"> ${product.price} </td>
                                 <td className=" py-2"> ${product.quantity} </td>
-                                <td className=" py-2"> ${product.price * product.quantity} </td>
+                                <td className=" py-2"> ${product.price * product.quantity} 
+                                    <button
+                                        className="text-red-500 hover:text-red-700"
+                                        onClick={() => handleRemoveItem(product._id)}
+                                    >
+                                        Remove
+                                    </button>
+                                </td>
                             </tr>
                         ))}           
                         
