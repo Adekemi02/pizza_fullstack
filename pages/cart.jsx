@@ -37,7 +37,7 @@ const CartPage = () => {
 
     const handleRemoveItem = (productId, instanceId) => {
         // Dispatch the removeFromCart action with the product ID
-        dispatch(removeFromCart(productId, instanceId));
+        dispatch(removeFromCart({productId, instanceId}));
     };
 
     // Custom component to wrap the PayPalButtons and handle currency changes
