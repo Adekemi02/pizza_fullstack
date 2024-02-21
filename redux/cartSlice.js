@@ -23,7 +23,7 @@ const cartSlice = createSlice({
       const { productId, instanceId } = action.payload;
       
       const indexToRemove = state.products.findIndex(
-        (product) => product._id === productId && product.variationId === variationId
+        (product) => product._id === productId && product.instanceId === instanceId
       );
 
       if (indexToRemove !== -1) {
