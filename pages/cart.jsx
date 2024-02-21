@@ -35,9 +35,9 @@ const CartPage = () => {
         }
     };
 
-    const handleRemoveItem = (productId) => {
+    const handleRemoveItem = (productId, instanceId) => {
         // Dispatch the removeFromCart action with the product ID
-        dispatch(removeFromCart(productId));
+        dispatch(removeFromCart(productId, instanceId));
     };
 
     // Custom component to wrap the PayPalButtons and handle currency changes
@@ -132,7 +132,7 @@ const CartPage = () => {
                                 </td>
                                 <td className=" py-2"> ${product.price} </td>
                                 <td className=" py-2"> ${product.quantity} </td>
-                                <td className=" py-2"> ${product.price * product.quantity} 
+                                <td className=" py-2 mr-1"> ${product.price * product.quantity} 
                                     <button
                                         className="text-red-500 hover:text-red-700"
                                         onClick={() => handleRemoveItem(product._id)}
