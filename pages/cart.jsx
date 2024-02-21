@@ -132,7 +132,7 @@ const CartPage = () => {
                                 </td>
                                 <td className=" py-2"> ${product.price} </td>
                                 <td className=" py-2"> ${product.quantity} </td>
-                                <td className=" py-2 mr-1"> ${product.price * product.quantity} 
+                                <td className=" py-2 mr-2"> ${product.price * product.quantity} 
                                     <button
                                         className="text-red-500 hover:text-red-700"
                                         onClick={() => handleRemoveItem(product._id)}

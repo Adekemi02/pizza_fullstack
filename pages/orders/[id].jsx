@@ -2,7 +2,7 @@ import Image from 'next/image';
 import React from 'react';
 import styles from '@/styles/Order.module.css';
 import axios from 'axios';
-import { BASE_URL } from '../../utils/connectUrl';
+import { BASE_API_URL } from '@/utils/connectUrl';
 
 
 
@@ -138,7 +138,7 @@ const OrderPage = ({order}) => {
 
 export const getServerSideProps = async ({params}) => {
 
-  const res = await axios.get(`http://localhost:3000/api/orders/${params.id}`);
+  const res = await axios.get(`${BASE_API_URL}/api/orders/${params.id}`);
   return {
     props: {
       order: res.data,
