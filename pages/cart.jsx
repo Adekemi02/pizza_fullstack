@@ -23,7 +23,7 @@ const CartPage = () => {
 
     const createOrder = async (data) => {
         try {
-            const res = await axios.post(`${BASE_API_URL}/api/orders`, data);
+            const res = await axios.post("https://pizzify.vercel.app/api/orders", data);
             console.log(res)
             if (res.status === 201) {
                 dispatch(reset());
@@ -132,9 +132,9 @@ const CartPage = () => {
                                 </td>
                                 <td className=" py-2"> ${product.price} </td>
                                 <td className=" py-2"> ${product.quantity} </td>
-                                <td className=" py-2 mr-2"> ${product.price * product.quantity} 
+                                <td className=" py-2"> ${product.price * product.quantity} 
                                     <button
-                                        className="text-red-500 hover:text-red-700"
+                                        className="text-red-500 hover:text-red-700 ml-3"
                                         onClick={() => handleRemoveItem(product._id)}
                                     >
                                         Remove
