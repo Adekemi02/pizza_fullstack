@@ -1,9 +1,21 @@
 import dbConnect from "@/utils/dbConnect";
 import Order from "@/models/Order";
+import initMiddleware from "@/utils/initMiddleware";
+import Cors  from "cors";
 
 
+
+const cors = initMiddleware(Cors(
+    {
+      methods: ['GET', 'POST', 'PUT', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      origin: process.env.API_BASE_URL,
+    }
+));
 
 const handler = async (req, res) => {
+    await cors (req, res);
+
     const {method} = req;
 
     await dbConnect()
@@ -12,7 +24,7 @@ const handler = async (req, res) => {
         try {
             const orders = await Order.find()
 
-            res.status(200).json(orders)
+            res.status(200).json({ success: true, data: products })
 
         } catch (err) {
             res.status(500).json(err)
