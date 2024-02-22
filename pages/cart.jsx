@@ -27,7 +27,7 @@ const CartPage = () => {
             
             if (res.status === 201) {
                 dispatch(reset());
-                router.push(`api/orders/${res.data._id}`);
+                router.push(`/orders/${res.data.data._id}`);
             }
 
         } catch (err) {
